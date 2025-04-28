@@ -11,7 +11,7 @@
                             <p style="font-family: sans-serif;">by <span>Gaurav Blogs</span> on <span><%= blogs.updatedAt %></span></p>
                         </div>
                         <div class="detail-img">
-    					   <img src="<%= blogs.img_url %>" alt="blog-img" width="710px"/>
+    					   <img src="<%= blogs.img_url %>" alt="blog-img" style="height: 500px; width: auto;"/>
                         </div>
                         <div class="blog-desc">
                             <p style="font-family: sans-serif;"><%= blogs.description %></p>
@@ -27,7 +27,7 @@
                             <a href="/readBlog/<%= blog.id %>">
                                 <div class="rb-box">
                                     <div class="rb-box-img">
-                                        <img src="<%= blog.img_url %>" alt="blog1" />
+                                        <img src="<%= blog.img_url %>" alt="blog1"/>
                                     </div>
                                     <div class="rb-box-desc">
                                         <h4 style="font-family: sans-serif; font-weight: bold;"><%= blog.title %></h4>
