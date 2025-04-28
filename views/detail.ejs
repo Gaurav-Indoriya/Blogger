@@ -11,7 +11,7 @@
                             <p style="font-family: sans-serif;">by <span>Gaurav Blogs</span> on <span><%= blogs.updatedAt %></span></p>
                         </div>
                         <div class="detail-img">
-    					   <img src="<%= blogs.img_url %>" alt="blog-img" style="height: 500px; width: auto;"/>
+                            <img src="<%= blogs.img_url %>" alt="blog-img" style="max-width: 75%; height: auto;"/>
                         </div>
                         <div class="blog-desc">
                             <p style="font-family: sans-serif;"><%= blogs.description %></p>
@@ -37,7 +37,7 @@
                             </a>
                             <% }); %>
                         </div>
-                        <% blogscategory.forEach(function(blog) { %>
+                       
                          <div class="right-widget categories">
                              <h3>Categories</h3>
                              <ul>
@@ -53,7 +53,6 @@
                                 <li><a href="/blogsByCategory/travel">Travel</a></li>
                             </ul>
                          </div>
-                            <% }); %>
     				</div>
     			</div>
     		</div>
