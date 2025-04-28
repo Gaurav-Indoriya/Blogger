@@ -1,0 +1,36 @@
+<%- include('./header.ejs')%>
+<br><br><br>
+    <section class="login-wrap mtb-40">
+    	<div class="container">
+    		<div class="row justify-content-center">
+    			<div class="col-md-6">
+                    <div class="login-box">
+                        <h1 style="font-family: sans-serif; font-weight: bolder;">Administrator Login</h1>
+                        <% if (message.length > 0) { %>
+                            <div class="alert alert-danger">
+                                <%= message %>
+                            </div>
+                        <% } %>
+                        <% if (message2.length > 0) { %>
+                          <div class="alert alert-success">
+                              <%= message2 %>
+                          </div>
+                      <% } %>
+                        <form action="/verifyLogin" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="email" class="form-control" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password" class="form-control" placeholder="Password" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Log In</button>
+                            </div>
+                            <!-- <a href="#" style="font-size:13px;" class="">Forgot Password?</a> -->
+                        </form>
+                    </div>         
+                </div>
+    		</div>
+    	</div>
+    </section>
+<%- include('./footer.ejs') %>

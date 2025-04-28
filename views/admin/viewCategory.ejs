@@ -1,0 +1,78 @@
+<%- include('./header.ejs') %>
+    <br><br><br>
+    <section class="dashboard-wrap mtb-40">
+        <div class="container">
+            <div class="body-content">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="dash-left">
+                            <ul style="font-family: sans-serif; font-weight: bold;">
+                                <li class="active"><a href="/dashboard" class="nav-link">Dashboard</a></li>
+                                <li><a class="nav-link" href="/adminBlogList">Blogs</a></li>
+                                <li><a class="nav-link active" href="/categories">Categories</a></li>
+                                <li><a class="nav-link" href="/pages">Pages</a></li>
+                                <li><a class="nav-link" href="/messageView">Messages</a></li>
+                                <li><a class="nav-link" href="/logout">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="dash-right">
+                            <h2 style="font-family: sans-serif; font-weight: bold;">CATEGORIES</h2><br>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="dash-left">
+                                            <ul style="font-family: sans-serif; font-weight: bold;">
+                                                <li><a class="nav-link <%= currentCategory === 'technology' ? 'active' : '' %>"
+                                                        href="/viewCategory/technology">Technology</a></li>
+                                                <li><a class="nav-link <%= currentCategory === 'design' ? 'active' : '' %>"
+                                                        href="/viewCategory/design">Design</a></li>
+                                                <li><a class="nav-link <%= currentCategory === 'culture' ? 'active' : '' %>"
+                                                        href="/viewCategory/culture">Culture</a></li>
+                                                <li><a class="nav-link <%= currentCategory === 'business' ? 'active' : '' %>"
+                                                        href="/viewCategory/business">Business</a></li>
+                                                <li><a class="nav-link <%= currentCategory === 'politics' ? 'active' : '' %>"
+                                                        href="/viewCategory/politics">Politics</a></li>
+                                                <li><a class="nav-link <%= currentCategory === 'opinion' ? 'active' : '' %>"
+                                                        href="/viewCategory/opinion">Opinion</a></li>
+                                                <li><a class="nav-link <%= currentCategory === 'science' ? 'active' : '' %>"
+                                                        href="/viewCategory/science">Science</a></li>
+                                                <li><a class="nav-link <%= currentCategory === 'health' ? 'active' : '' %>"
+                                                        href="/viewCategory/health">Health</a></li>
+                                                <li><a class="nav-link <%= currentCategory === 'style' ? 'active' : '' %>"
+                                                        href="/viewCategory/style">Style</a></li>
+                                                <li><a class="nav-link <%= currentCategory === 'travel' ? 'active' : '' %>"
+                                                        href="/viewCategory/travel">Travel</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div class="row">
+                                            <% if (blogs.length === 0) { %>
+                                                <h4 style="font-family: sans-serif; font-weight: bold;">Currently no blogs in this category!</h4>
+                                                <img style="height: 300px; width: auto;" src="/assets/images/no-data.jpg" alt="">
+                                                <% } else { %>
+                                            <% blogs.forEach(function(blog) { %>
+                                                <div class="col-md-4">
+                                                    <div class="blog-box">
+                                                        <img src="<%= blog.img_url %>" alt="blog1" class="img-fluid"
+                                                            style="height: 150px; width: auto;" />
+                                                        <a href="/categoryBlogPage/<%= blog.id %>" style="font-family: sans-serif; font-weight: bold;">
+                                                            <%= blog.title %>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <% }); %>
+                                                <% } %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <%- include('../footer.ejs') %>

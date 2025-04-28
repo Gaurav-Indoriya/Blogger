@@ -1,0 +1,63 @@
+<%- include('./header.ejs')%>
+<br><br><br>
+    <section class="blog-detail mtb-40">
+    	<div class="container">
+    		<div class="row">
+
+    			<div class="col-md-8">
+    				<div class="blog-left">
+                        <h1 style="font-family: sans-serif; font-weight: bold;"><%= blogs.title %></h1>
+                        <div class="posted-on">
+                            <p style="font-family: sans-serif;">by <span>Gaurav Blogs</span> on <span><%= blogs.updatedAt %></span></p>
+                        </div>
+                        <div class="detail-img">
+    					   <img src="<%= blogs.img_url %>" alt="blog-img" width="710px"/>
+                        </div>
+                        <div class="blog-desc">
+                            <p style="font-family: sans-serif;"><%= blogs.description %></p>
+                        </div>
+    				</div>
+    			</div>
+
+    			<div class="col-md-4">
+    				<div class="blog-right">
+                        <div class="right-widget recent-post">
+                            <h3>Recent Blogs</h3>
+                            <% recentblogs.forEach(function(blog) { %>
+                            <a href="/readBlog/<%= blog.id %>">
+                                <div class="rb-box">
+                                    <div class="rb-box-img">
+                                        <img src="<%= blog.img_url %>" alt="blog1" />
+                                    </div>
+                                    <div class="rb-box-desc">
+                                        <h4 style="font-family: sans-serif; font-weight: bold;"><%= blog.title %></h4>
+                                        <p style="font-family: sans-serif;"><%= blog.createdAt %></p>
+                                    </div>
+                                </div>
+                            </a>
+                            <% }); %>
+                        </div>
+                        <% blogscategory.forEach(function(blog) { %>
+                         <div class="right-widget categories">
+                             <h3>Categories</h3>
+                             <ul>
+                                <li><a href="/blogsByCategory/technology">Technology</a></li>
+                                <li><a href="/blogsByCategory/design">Design</a></li>
+                                <li><a href="/blogsByCategory/culture">Culture</a></li>
+                                <li><a href="/blogsByCategory/business">Business</a></li>
+                                <li><a href="/blogsByCategory/politics">Politics</a></li>
+                                <li><a href="/blogsByCategory/opinion">Opinion</a></li>
+                                <li><a href="/blogsByCategory/science">Science</a></li>
+                                <li><a href="/blogsByCategory/health">Health</a></li>
+                                <li><a href="/blogsByCategory/style">Style</a></li>
+                                <li><a href="/blogsByCategory/travel">Travel</a></li>
+                            </ul>
+                         </div>
+                            <% }); %>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+
+<%- include('./footer.ejs')%>

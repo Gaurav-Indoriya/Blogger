@@ -1,0 +1,42 @@
+<%- include('./header.ejs') %>
+    <br><br><br>
+    <section class="dashboard-wrap mtb-40">
+        <div class="container">
+            <div class="body-content">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="dash-left">
+                            <ul style="font-family: sans-serif; font-weight: bold;">
+                                <li class="active"><a href="/dashboard" class="nav-link">Dashboard</a></li>
+                                <li><a class="nav-link" href="/adminBlogList">Blogs</a></li>
+                                <li><a class="nav-link" href="/categories">Categories</a></li>
+                                <li><a class="nav-link active" href="/pages">Pages</a></li>
+                                <li><a class="nav-link" href="/messageView">Messages</a></li>
+                                <li><a class="nav-link" href="/logout">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="dash-right">
+                            <h1 style="font-family: sans-serif; font-weight: bold;">ALL BLOG PAGES</h1><br>
+                            <div class="container">
+                                <div class="row" style="max-height: 300px; overflow-y: auto;">
+                                    <% blogPages.forEach(function(pages) { %>
+                                        <div class="col-md-3">
+                                            <div class="blog-box">
+                                                <img src="<%= pages.img_url %>" alt="blog1" class="img-fluid"
+                                                    style="height: 100px; width: auto;" />
+                                                <p style="font-family: sans-serif; font-weight: bold;">
+                                                    <a href="/viewPage/<%= pages.id %>"><%= pages.title %></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <% }); %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <%- include('../footer.ejs') %>

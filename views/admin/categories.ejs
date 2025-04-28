@@ -1,0 +1,52 @@
+<%- include('./header.ejs') %>
+    <br><br><br>
+    <section class="dashboard-wrap mtb-40">
+        <div class="container">
+            <div class="body-content">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="dash-left">
+                            <ul style="font-family: sans-serif; font-weight: bold;">
+                                <li class="active"><a href="/dashboard" class="nav-link">Dashboard</a></li>
+                                <li><a class="nav-link" href="/adminBlogList">Blogs</a></li>
+                                <li><a class="nav-link active" href="/categories">Categories</a></li>
+                                <li><a class="nav-link" href="/pages">Pages</a></li>
+                                <li><a class="nav-link" href="/messageView">Messages</a></li>
+                                <li><a class="nav-link" href="/logout">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="dash-right">
+                            <h2 style="font-family: sans-serif; font-weight: bold;">CATEGORIES</h2>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="dash-left">
+                                            <ul style="font-family: sans-serif; font-weight: bold;">
+                                                <li><a class="nav-link" href="/viewCategory/technology">Technology</a></li>
+                                                <li><a class="nav-link" href="/viewCategory/design">Design</a></li>
+                                                <li><a class="nav-link" href="/viewCategory/culture">Culture</a></li>
+                                                <li><a class="nav-link" href="/viewCategory/business">Business</a></li>
+                                                <li><a class="nav-link" href="/viewCategory/politics">Politics</a></li>
+                                                <li><a class="nav-link" href="/viewCategory/opinion">Opinion</a></li>
+                                                <li><a class="nav-link" href="/viewCategory/science">Science</a></li>
+                                                <li><a class="nav-link" href="/viewCategory/health">Health</a></li>
+                                                <li><a class="nav-link" href="/viewCategory/style">Style</a></li>
+                                                <li><a class="nav-link" href="/viewCategory/travel">Travel</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <h5 style="font-family: Gill Sans MT;">Click on category name for<br>view blogs data by category.</h5>
+                                        <img src="/assets/images/category-img.jpeg" style="height: 300px;" width="auto" alt=""/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <%- include('../footer.ejs') %>

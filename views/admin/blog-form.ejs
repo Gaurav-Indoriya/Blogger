@@ -1,0 +1,84 @@
+<%- include('./header.ejs')%>
+<br><br><br>
+    <section class="dashboard-wrap mtb-40">
+    	<div class="container">
+            <div class="body-content">
+        		<div class="row">
+        			<div class="col-md-3">
+                        <div class="dash-left">
+                            <ul style="font-family: sans-serif; font-weight: bold;">
+                                <li class="active"><a href="/dashboard" class="nav-link">Dashboard</a></li>
+                                <li><a class="nav-link active" href="/adminBlogList">Blogs</a></li>
+                                <li><a class="nav-link" href="#">Categories</a></li>
+                                <li><a class="nav-link" href="/pages">Pages</a></li>
+                                <li><a class="nav-link" href="/messageView">Messages</a></li>
+                                <li><a class="nav-link" href="/logout">Logout</a></li>
+                            </ul>
+                        </div>   
+                    </div>
+                    <div class="col-md-9">
+                        <div class="dash-right">
+                            <div class="dash-header">
+                              <div class="dash-title">
+                                  <h1>CREATE BLOG</h1><br>
+                              </div>
+                            </div>
+                            <div class="blog-form" style="font-family: sans-serif; font-weight: bold;">
+                              <form action="/addPost" method="POST" enctype="multipart/form-data">
+                                
+                                <div class="form-group form-row">
+                                  <label class="col-md-3" for="title">Title<span class="required" style="color: red;">*</span></label>
+                                  <div class="col-md-9">
+                                    <input type="text" id="title" name="title" class="form-control" placeholder="Title" required>
+                                  </div>
+                                </div>
+                            
+                                <div class="form-group form-row">
+                                  <label class="col-md-3" for="category">Category<span class="required" style="color: red;">*</span></label>
+                                  <div class="col-md-9">
+                                    <select name="category" id="category" required class="form-control" required>
+                                      <option value="">Select Category</option>
+                                      <option value="Technology">Technology</option>
+                                      <option value="Design">Design</option>
+                                      <option value="Business">Business</option>
+                                      <option value="Politics">Politics</option>
+                                      <option value="Opinion">Opinion</option>
+                                      <option value="Science">Science</option>
+                                      <option value="Health">Health</option>
+                                      <option value="Style">Style</option>
+                                      <option value="Travel">Travel</option>
+                                    </select>
+                                  </div>
+                                </div>
+                            
+                                <div class="form-group form-row">
+                                  <label class="col-md-3" for="image">Upload Image<span class="required" style="color: red;">*</span></label>
+                                  <div class="col-md-9">
+                                    <input type="file" name="image" accept="image/jpg, image/jpeg" id="image" required class="form-control-file">
+                                  </div>
+                                </div>
+                            
+                                <div class="form-group form-row">
+                                  <label class="col-md-3" for="description">Description <span class="required" style="color: red;">*</span></label>
+                                  <div class="col-md-9">
+                                    <textarea name="description" id="description" rows="5" class="form-control" placeholder="Description" required></textarea>
+                                  </div>
+                                </div>
+                            
+                                <div class="form-group form-row">
+                                  <div class="col-md-9 offset-md-3">
+                                    <a class="btn btn-danger" href="/adminBlogList">Back</a>
+                                    <button type="submit" class="btn btn-success">Post</button>
+                                  </div>
+                                </div>
+                            
+                              </form>
+                            </div>
+                            
+                        </div>   
+                    </div>
+        		</div>
+            </div>
+    	</div>
+    </section>
+    <%- include('../footer.ejs')%>

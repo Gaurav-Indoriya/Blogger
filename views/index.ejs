@@ -1,0 +1,32 @@
+<%- include('./header.ejs')%>
+	<section class="banner">
+		<div class="banner-box">
+			<div class="intro-text">
+				<div class="intro-text-box">
+					<h1 class="animate__animated animate__backInDown" style="font-family: sans-serif; font-weight: bold;">BLOGBYGAURAV</h1>
+					<h4 class="animate__animated animate__backInLeft" style="font-family: sans-serif; font-weight: bold;">Where ideas meet expression and words find purpose.</h4>
+				</div>
+			</div>
+			<img src="assets/images/banner.jpg" alt="banner" />
+		</div>
+	</section>
+	<section class="featured-blog mtb-40">
+		<div class="container">
+			<h1 class="mb-5" style="font-family: sans-serif; font-weight: bold;">Latest Blogs</h1>
+			<div class="row">
+				<% blogs.forEach(function(blog) { %>
+					<div class="col-md-4">
+						<div class="blog-box">
+							<img src="<%= blog.img_url %>" alt="blog-img" class="img-fluid" style="height: 250px; width: auto;"/>
+							<h3 style="font-family: sans-serif; font-weight: bold;"><%= blog.title %></h3>
+							<p style="font-family: sans-serif;">by <span>Gaurav Indoriya</span> on <span><%= blog.updatedAt %></span></p>
+							<% const titleLines = blog.description.split(' ').slice(0,7).join(' ') + ''; %>
+							<p style="font-family: sans-serif;"><%= titleLines %></p>
+							<a href="/readBlog/<%= blog.id %>" class="btn btn-danger">Read more...</a>
+						</div>
+					</div>
+				<% }); %>
+			</div>
+		</div>
+	</section>	
+	<%- include('./footer.ejs')%>
