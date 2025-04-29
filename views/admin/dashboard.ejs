@@ -1,7 +1,7 @@
 <%- include('./header.ejs') %>
     <br><br><br>
     <section class="dashboard-wrap mtb-40">
-        <div class="container">
+        <div class="container" data-aos="flip-up" data-aos-delay="100" data-aos-duration="800">
             <div class="body-content">
                 <div class="row">
                     <div class="col-md-3">
@@ -16,7 +16,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-9" data-aos="flip-down" data-aos-delay="100" data-aos-duration="800">
                         <div class="dash-right">
                             <h1 style="font-family: sans-serif; font-weight: bold;">ADMIN DASHBOARD</h1>
                             <p>Welcome back to your blogging hub.
@@ -24,7 +24,6 @@
                             <div class="col-xs-12 text-center mb-5">
                                 <h2 style="font-family: sans-serif; font-weight: bold;">Total Blogs</h2>
                             </div>
-
                             <div id="donut-chart"></div>
                             <script>
                                 const chartData = <%- chartData %>;

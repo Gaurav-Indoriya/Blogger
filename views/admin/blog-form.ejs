@@ -1,7 +1,7 @@
 <%- include('./header.ejs')%>
 <br><br><br>
     <section class="dashboard-wrap mtb-40">
-    	<div class="container">
+    	<div class="container" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="800">
             <div class="body-content">
         		<div class="row">
         			<div class="col-md-3">
@@ -9,7 +9,7 @@
                             <ul style="font-family: sans-serif; font-weight: bold;">
                                 <li class="active"><a href="/dashboard" class="nav-link">Dashboard</a></li>
                                 <li><a class="nav-link active" href="/adminBlogList">Blogs</a></li>
-                                <li><a class="nav-link" href="#">Categories</a></li>
+                                <li><a class="nav-link" href="/categories">Categories</a></li>
                                 <li><a class="nav-link" href="/pages">Pages</a></li>
                                 <li><a class="nav-link" href="/messageView">Messages</a></li>
                                 <li><a class="nav-link" href="/logout">Logout</a></li>
@@ -40,7 +40,7 @@
                                       <option value="">Select Category</option>
                                       <option value="Technology">Technology</option>
                                       <option value="Design">Design</option>
-                                      <option value="Business">Culture</option>
+                                      <option value="Culture">Culture</option>
                                       <option value="Business">Business</option>
                                       <option value="Politics">Politics</option>
                                       <option value="Opinion">Opinion</option>
